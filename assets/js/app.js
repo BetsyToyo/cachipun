@@ -1,17 +1,32 @@
 $(function(){
-    
-    do {
+
+    $("#inicio").click(function iniciar(){do {
         var intentos= prompt("Bienvenido al cachipun contra la maquina 😉. Cuantos intentos desea hacer? (ingrese numero del 1 al 10)","");
         intentos= parseInt(intentos)
-        if (condition) {
+        if (intentos<1 || intentos>10 || typeof(intentos)==="string") {
             alert("ERROR! Sigue nuestras instrucciones 😉 ingrese numero del 1 al 10 para intentos")
         }
-    } while (intentos<1 || intentos>10);
+    } while (intentos<1 || intentos>10 || typeof(intentos)==="string");
     
     for (let index = 0; index < intentos; index++) {
            iteracion()
         
-    }
+    }})
+
+    // function iniciar(){ do {
+    //     var intentos= prompt("Bienvenido al cachipun contra la maquina 😉. Cuantos intentos desea hacer? (ingrese numero del 1 al 10)","");
+    //     intentos= parseInt(intentos)
+    //     if (intentos<1 || intentos>10 || typeof(intentos)==="string") {
+    //         alert("ERROR! Sigue nuestras instrucciones 😉 ingrese numero del 1 al 10 para intentos")
+    //     }
+    // } while (intentos<1 || intentos>10 || typeof(intentos)==="string");
+    
+    // for (let index = 0; index < intentos; index++) {
+    //        iteracion()
+        
+    // }}
+    
+   
 
      function iteracion(){
         do {
@@ -35,9 +50,9 @@ $(function(){
             eleccionMaquina="tijera"
         }
 
-        console.log(maquina);
-        console.log(jugador);
+        console.log(maquina);        
         console.log(eleccionMaquina);
+        console.log(jugador);
             
 
         switch (eleccionMaquina) {
@@ -53,11 +68,9 @@ $(function(){
                     console.log("has perdido la partida 😢");
                     resultado="has perdido la partida 😢";
                 }
-
                 
-                console.log(eleccionMaquina);
-                console.log(jugador);
-                
+                mostrarPantalla()
+                                
                 break;
                 
 
@@ -72,12 +85,10 @@ $(function(){
                     console.log("has perdido la partida 😢");
                     resultado="has perdido la partida 😢";
                 }
-
                
-                console.log(eleccionMaquina);
-                console.log(jugador);
-
-                break;
+                mostrarPantalla()
+                
+               break;
                             
 
             case "tijera":
@@ -92,9 +103,7 @@ $(function(){
                     resultado="has perdido la partida 😢";
                 }
                 
-               
-                console.log(eleccionMaquina);
-                console.log(jugador);
+                mostrarPantalla()
                 
                 break;                                
                     
@@ -104,14 +113,14 @@ $(function(){
 
     }
 
-    
-//     $("#cuerpo-resultados").html(`
-//     <h2>La maquina ha elegido:${eleccionMaquina}<h2>
+    function mostrarPantalla(){
+    $("#cuerpo-resultados").html(`
+    <h2>La maquina ha elegido:${eleccionMaquina}<h2>
 
-//     <h2>Tu has elegido:${jugador}<h2>
+    <h2>Tu has elegido:${jugador}<h2>
 
-//     <h2>${resultado}<h2>            
-// `);
+    <h2>${resultado}<h2>            
+`);}
 };
     
        
