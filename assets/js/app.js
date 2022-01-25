@@ -13,22 +13,12 @@ $(function(){
         
     }})
 
-    // function iniciar(){ do {
-    //     var intentos= prompt("Bienvenido al cachipun contra la maquina 😉. Cuantos intentos desea hacer? (ingrese numero del 1 al 10)","");
-    //     intentos= parseInt(intentos)
-    //     if (intentos<1 || intentos>10 || typeof(intentos)==="string") {
-    //         alert("ERROR! Sigue nuestras instrucciones 😉 ingrese numero del 1 al 10 para intentos")
-    //     }
-    // } while (intentos<1 || intentos>10 || typeof(intentos)==="string");
-    
-    // for (let index = 0; index < intentos; index++) {
-    //        iteracion()
-        
-    // }}
-    
-   
+    $("#reiniciar").click(function(){
+        //Actualizamos la página
+        location.reload();
+      });
 
-     function iteracion(){
+    function iteracion(){
         do {
             var jugador= prompt("Elije piedra ✊, papel ✋ o tijera ✌ (escribelo tal cual en minuscula sin los emojis claro!)","");
             if(jugador!="piedra" && jugador!="papel" && jugador!="tijera"){
